@@ -8,6 +8,8 @@
 
 import UIKit
 import FBSDKLoginKit
+import TwitterKit
+
 
 
 class FBco: UIViewController {
@@ -21,14 +23,34 @@ class FBco: UIViewController {
         super.viewDidLoad()
         
         let loginButton = FBSDKLoginButton()
-        loginButton.center = view.center
+        loginButton.frame.origin = CGPoint(x: 100, y: 100)
         view.addSubview(loginButton)
+        
+        let logInButton = TWTRLogInButton { (session, error) in
+            if let unwrappedSession = session {
+                let alert = UIAlertController(title: "Logged In",
+                    message: "User \(unwrappedSession.userName) has logged in",
+                    preferredStyle: UIAlertControllerStyle.Alert
+                )
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                NSLog("Login error: %@", error!.localizedDescription);
+            }
+        }
+        
+        // TODO: Change where the log in button is positioned in your view
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
+
         
         //print(fbAccessToken)
         
         let defaults = NSUserDefaults.standardUserDefaults()
         if let stringOne = defaults.stringForKey(defaultsKeys.token) {
         print(stringOne) // Some String Value
+            print("tokennnnnnnnnn")
+                print(defaults.stringForKey("token"))
         }
         
 
@@ -59,18 +81,22 @@ class FBco: UIViewController {
         var index1 = defaults.stringForKey(defaultsKeys.token)!.startIndex.advancedBy(0)
         var substring1 = defaults.stringForKey(defaultsKeys.token)!.substringFromIndex(index1)
         
-        print(substring1)
+        print(defaults.stringForKey("token"))
 
-        let urlWithParams = scriptUrl + "?token=\(substring1)"
+        let urlWithParams = scriptUrl
+        
+        
        
         // Create NSURL Ibject
         let myUrl = NSURL(string: urlWithParams);
         
         // Creaste URL Request
         let request = NSMutableURLRequest(URL:myUrl!);
+        request.setValue(defaults.stringForKey("token"), forHTTPHeaderField: "x-access-token")
+
         
         // Set request HTTP method to GET. It could be POST as well
-        request.HTTPMethod = "PATCH"
+        request.HTTPMethod = "DELETE"
         
         // Excute HTTP Request
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {

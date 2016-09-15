@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32BB77361D8A95410071B197 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BB77321D8A95410071B197 /* Fabric.framework */; };
+		32BB77371D8A95410071B197 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BB77331D8A95410071B197 /* TwitterKit.framework */; };
+		32BB77381D8A95410071B197 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32BB77341D8A95410071B197 /* TwitterKitResources.bundle */; };
+		32BB77391D8A95410071B197 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BB77351D8A95410071B197 /* TwitterCore.framework */; };
+		32BB773B1D8AA1810071B197 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BB773A1D8AA1810071B197 /* ResetPassword.swift */; };
 		32D32D2B1D76EA9000C2AADF /* Inscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D32D2A1D76EA9000C2AADF /* Inscription.swift */; };
 		32D32D2D1D76EECC00C2AADF /* option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D32D2C1D76EECC00C2AADF /* option.swift */; };
 		32F5D5F01D33C226000CE7FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F5D5EF1D33C226000CE7FC /* AppDelegate.swift */; };
@@ -49,6 +54,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		32BB77321D8A95410071B197 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		32BB77331D8A95410071B197 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
+		32BB77341D8A95410071B197 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
+		32BB77351D8A95410071B197 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = SOURCE_ROOT; };
+		32BB773A1D8AA1810071B197 /* ResetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		32D32D2A1D76EA9000C2AADF /* Inscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Inscription.swift; path = ../Inscription.swift; sourceTree = "<group>"; };
 		32D32D2C1D76EECC00C2AADF /* option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = option.swift; sourceTree = "<group>"; };
 		32F5D5EC1D33C226000CE7FC /* fooyemeet-beta-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fooyemeet-beta-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,9 +85,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F5D6131D33C41B000CE7FC /* FBSDKLoginKit.framework in Frameworks */,
+				32BB77361D8A95410071B197 /* Fabric.framework in Frameworks */,
+				32BB77391D8A95410071B197 /* TwitterCore.framework in Frameworks */,
 				32F5D6121D33C41B000CE7FC /* FBSDKCoreKit.framework in Frameworks */,
 				32F5D6141D33C41B000CE7FC /* FBSDKShareKit.framework in Frameworks */,
 				32F5D61A1D341387000CE7FC /* Mapbox.framework in Frameworks */,
+				32BB77371D8A95410071B197 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +130,13 @@
 				32F5D6101D33C41B000CE7FC /* FBSDKLoginKit.framework */,
 				32F5D6111D33C41B000CE7FC /* FBSDKShareKit.framework */,
 				32F5D5EF1D33C226000CE7FC /* AppDelegate.swift */,
+				32BB77321D8A95410071B197 /* Fabric.framework */,
+				32BB77331D8A95410071B197 /* TwitterKit.framework */,
+				32BB77341D8A95410071B197 /* TwitterKitResources.bundle */,
+				32BB77351D8A95410071B197 /* TwitterCore.framework */,
 				32F5D5F11D33C226000CE7FC /* ViewController.swift */,
 				32D32D2A1D76EA9000C2AADF /* Inscription.swift */,
+				32BB773A1D8AA1810071B197 /* ResetPassword.swift */,
 				32F5D5F31D33C226000CE7FC /* Main.storyboard */,
 				32D32D2C1D76EECC00C2AADF /* option.swift */,
 				32F5D6171D33DACE000CE7FC /* Map.swift */,
@@ -223,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BB77381D8A95410071B197 /* TwitterKitResources.bundle in Resources */,
 				32F5D5FA1D33C226000CE7FC /* LaunchScreen.storyboard in Resources */,
 				32F5D5F71D33C226000CE7FC /* Assets.xcassets in Resources */,
 				32F5D5F51D33C226000CE7FC /* Main.storyboard in Resources */,
@@ -245,6 +264,7 @@
 			files = (
 				32F5D5F21D33C226000CE7FC /* ViewController.swift in Sources */,
 				32F5D6161D33C4DD000CE7FC /* FBco.swift in Sources */,
+				32BB773B1D8AA1810071B197 /* ResetPassword.swift in Sources */,
 				32F5D6181D33DACE000CE7FC /* Map.swift in Sources */,
 				32F5D5F01D33C226000CE7FC /* AppDelegate.swift in Sources */,
 				32D32D2D1D76EECC00C2AADF /* option.swift in Sources */,

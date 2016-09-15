@@ -69,8 +69,8 @@ class Map: UIViewController {
         
         // Set request HTTP method to GET. It could be POST as well
         request.HTTPMethod = "GET"
-    request.setValue("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NzY3YmZiODk1ZGM1YmUwNzFkNDhlYmEiLCJpYXQiOjE0NjgyNjIyNDd9.Qwd1cliisN2jb_AOzvCSuZudgyTaLt1D08Qmrj4sOh0", forHTTPHeaderField: "x-access-token")
         
+        request.setValue(defaults.stringForKey("token"), forHTTPHeaderField: "x-access-token")
         
         // Excute HTTP Request
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {

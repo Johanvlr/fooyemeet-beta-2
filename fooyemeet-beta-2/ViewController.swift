@@ -88,13 +88,16 @@ class ViewController: UIViewController {
                         let jsonData:NSDictionary = try NSJSONSerialization.JSONObjectWithData(urlData!, options:NSJSONReadingOptions.MutableContainers ) as! NSDictionary
                         
                         
-                        let success:NSInteger = jsonData.valueForKey("success") as! NSInteger
+                    //let success:NSInteger = jsonData.valueForKey("success") as! NSInteger
                         
                         //[jsonData[@"success"] integerValue];
                         
-                        NSLog("Success: %ld", success);
+                        NSLog("Response: %ld", responseData);
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        defaults.setValue(jsonData["token"], forKey: "token")
+                        defaults.synchronize()
                         
-                        if(success == 1)
+                        if(responseData == 200)
                         {
                             NSLog("Login SUCCESS");
                          

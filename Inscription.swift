@@ -51,7 +51,7 @@ class Inscription: UIViewController {
         let region:NSString = txtRegion.text!
         let departement:NSString = txtDepartement.text!
         
-        print("ijkjkjk")
+
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-52-59-251-0.eu-central-1.compute.amazonaws.com:8080/api/users")!)
         request.HTTPMethod = "POST"
